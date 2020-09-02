@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>Basic Grids!</title>
+</head>
+
+<style>
+  p {
+    font-size: 50px;
+    border-bottom: 10px solid var(--yellow);
+    color: var(--black);
+  }
+
+  .container1 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: solid 5px var(--yellow)
+  }
+
+  .container2 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr) 300px;
+    border: solid 5px var(--yellow);
+  }
+  .itm1 {
+    grid-column: 1 / 3;
+  /*  or grid-column: 1 / span 2*/
+  /*  for full track use 1 / -1*/
+  }
+  .itm5 {
+    grid-row: 2 / 4;
+  /*  or grid-row: 2 / span 3*/
+  }
+</style>
+
+<body>
+<h1>Basic Grid</h1>
+  <div class="container1">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+  </div>
+<br />
+<br />
+<h1>Multi items</h1>
+<div class="container2">
+
+  <div class="item itm1">1</div>
+  <div class="item itm2">2</div>
+  <div class="item itm3">3</div>
+  <div class="item itm4">4</div>
+  <div class="item itm5">5</div>
+  <div class="item itm6">6</div>
+  <div class="item itm7">7</div>
+  <div class="item itm8">8</div>
+  <div class="item itm9">9</div>
+  <div class="item itm10">10</div>
+  <div class="item itm11">11</div>
+  <div class="item itm12">12</div>
+  <div class="item itm13">13</div>
+  <div class="item itm14">14</div>
+  <div class="item itm15">15</div>
+
+</div>
+</body>
+
+</html>

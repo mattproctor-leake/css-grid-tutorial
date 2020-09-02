@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <title>Formats and Grid Areas!</title>
+</head>
+<style>
+    .container1 {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 3fr 10fr 3fr;
+        grid-template-rows: 100px 100px 50px;
+        border: solid 5px var(--yellow);
+        /*sort by areas not col/row lines*/
+        /*need to visualise grid that appears on page*/
+        grid-template-areas:
+            "side-left main side-right"
+            "side-left main side-right"
+            "footer footer footer"
+    }
+    /*remember to attach the associated grid areas*/
+    .item1 {
+        grid-area: side-left;
+    }
+    .item2 {
+        grid-area: main;
+    }
+    .item3 {
+        grid-area: side-right;
+    }
+    .item4 {
+        grid-area: footer;
+    }
+    /* the media styling to re-plan the grid layout*/
+    /* if not using auto-fit then need to detail grid-template-columns*/
+    @media (max-width: 700px) {
+        .container1 {
+            grid-template-columns: 3fr 3fr;
+            grid-template-areas:
+                "main main"
+                "side-left side-right"
+                "footer footer"
+        }
+    }
+
+    .container2 {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr) 300px;
+        border: solid 5px var(--yellow);
+        /*remove below to show gaps*/
+        grid-auto-flow: dense;
+    }
+    .item:nth-child(2){
+        grid-column: 1 / span 3;
+
+    }
+    .item:nth-child(3) {
+        grid-row: 2 / span 4;
+        /*justify is x, align is y*/
+        justify-content: start;
+        align-items: start;
+
+    }
+    .itm12 {
+        align-content: end;
+    }
+    .itm14 {
+        justify-content: end;
+        align-content: start;
+    }
+</style>
+<body>
+<h1>Grid Areas</h1>
+<div class="container1">
+    <div class="itm item1">Side-Left</div>
+    <div class="itm item2">Main</div>
+    <div class="itm item3">Side-Right</div>
+    <div class="itm item4">Footer</div>
+</div>
+<br />
+<br />
+<h1>Auto Flow and Cell Format</h1>
+<div class="container2">
+
+    <div class="item itm1">1</div>
+    <div class="item itm2">2</div>
+    <div class="item itm3">3</div>
+    <div class="item itm4">4</div>
+    <div class="item itm5">5</div>
+    <div class="item itm6">6</div>
+    <div class="item itm7">7</div>
+    <div class="item itm8">8</div>
+    <div class="item itm9">9</div>
+    <div class="item itm10">10</div>
+    <div class="item itm11">11</div>
+    <div class="item itm12">12</div>
+    <div class="item itm13">13</div>
+    <div class="item itm14">14</div>
+    <div class="item itm15">15</div>
+
+</div>
+
+
+
+</body>
+</html>
